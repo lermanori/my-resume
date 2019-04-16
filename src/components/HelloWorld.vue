@@ -35,7 +35,7 @@
             <li v-for="(project,index) in projects" :key="index">
               <h4 class="title font-weight-thin">{{project.header}}</h4>
               <p>{{project.text}}</p>
-              <a :href='project.url'><v-btn dark>{{project.url}}</v-btn></a>
+              <a :href='project.url'><v-btn class="text-no-wrap" dark>GOTO PROJECT</v-btn></a>
             </li>
           </ul>
         <h1 class="display-5 text-center font-weight-thin">ABOUT-ME</h1>
