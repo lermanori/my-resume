@@ -1,147 +1,117 @@
 <template>
-  <v-container>
-    <v-layout
-      text-xs-center
-      wrap
-    >
-      <v-flex xs12>
-        <v-img
-          :src="require('../assets/logo.svg')"
-          class="my-3"
-          contain
-          height="200"
-        ></v-img>
-      </v-flex>
+  <v-container class="white--text wrapper-container">
+    <app-header />
+    <v-divider dark />
+    <v-container>
+      <v-layout row wrap>
+        <v-flex md6 xs12>
+          <app-skills />
+          <h1 class="display-5 text-center font-weight-thin">EDUCATION</h1>
+          <p>
+            {{education_text}}
+          </p>
+          <h1 class="display-5 text-center font-weight-thin">Courses</h1>
+          <ul>
+            <li v-for="(course,index) in courses" :key="index">
+              {{course.header}}
+              <ul>
+                <li v-for="(subcourse,index) in course.list" :key="index">
+                  {{subcourse}}
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </v-flex>
+        <v-flex md6 xs12 class="white--text">
+          <h1 class="display-5 text-center font-weight-thin">EXPERIENCE</h1>
+          <ul>
+            <li v-for="(expirience,index) in expiriences" :key="index">
+              <p>{{expirience.text}}</p>
+            </li>
+          </ul>
+          <h1 class="display-5 text-center font-weight-thin">OWN-PROJECTS</h1>
+          <ul>
+            <li v-for="(project,index) in projects" :key="index">
+              <h4 class="title font-weight-thin">{{project.header}}</h4>
+              <p>{{project.text}}</p>
+            </li>
+          </ul>
+        <h1 class="display-5 text-center font-weight-thin">ABOUT-ME</h1>
+        <p>
+          {{about_me_text}}
+          </p>
+        </v-flex>
 
-      <v-flex mb-4>
-        <h1 class="display-2 font-weight-bold mb-3">
-          Welcome to Vuetify
-        </h1>
-        <p class="subheading font-weight-regular">
-          For help and collaboration with other Vuetify developers,
-          <br>please join our online
-          <a href="https://community.vuetifyjs.com" target="_blank">Discord Community</a>
-        </p>
-      </v-flex>
-
-      <v-flex
-        mb-5
-        xs12
-      >
-        <h2 class="headline font-weight-bold mb-3">What's next?</h2>
-
-        <v-layout justify-center>
-          <a
-            v-for="(next, i) in whatsNext"
-            :key="i"
-            :href="next.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ next.text }}
-          </a>
-        </v-layout>
-      </v-flex>
-
-      <v-flex
-        xs12
-        mb-5
-      >
-        <h2 class="headline font-weight-bold mb-3">Important Links</h2>
-
-        <v-layout justify-center>
-          <a
-            v-for="(link, i) in importantLinks"
-            :key="i"
-            :href="link.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ link.text }}
-          </a>
-        </v-layout>
-      </v-flex>
-
-      <v-flex
-        xs12
-        mb-5
-      >
-        <h2 class="headline font-weight-bold mb-3">Ecosystem</h2>
-
-        <v-layout justify-center>
-          <a
-            v-for="(eco, i) in ecosystem"
-            :key="i"
-            :href="eco.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ eco.text }}
-          </a>
-        </v-layout>
-      </v-flex>
-    </v-layout>
+      </v-layout>
+    </v-container>
   </v-container>
 </template>
 
 <script>
-  export default {
-    data: () => ({
-      ecosystem: [
-        {
-          text: 'vuetify-loader',
-          href: 'https://github.com/vuetifyjs/vuetify-loader'
-        },
-        {
-          text: 'github',
-          href: 'https://github.com/vuetifyjs/vuetify'
-        },
-        {
-          text: 'awesome-vuetify',
-          href: 'https://github.com/vuetifyjs/awesome-vuetify'
-        }
+import skills from './skills'
+import header from './header'
+
+export default {
+  data(){
+    return {
+      education_text:"The Academic College of Tel Aviv-Yafo 10/2016 – present. \
+                      Major: Computer Science B.Sc.",
+                      //Programming Coursework: Algorithms, Data Structures, Design Patterns, Data-Bases, Object-oriented-programing. ",
+      expiriences:[
+        {text:"Lorem ipsum dolor sit amet consectetur adipisicing elit."},
+        {text:"Lorem ipsum dolor sit amet consectetur adipisicing elit."},
+        {text:"Lorem ipsum dolor sit amet consectetur adipisicing elit."}
       ],
-      importantLinks: [
-        {
-          text: 'Documentation',
-          href: 'https://vuetifyjs.com'
-        },
-        {
-          text: 'Chat',
-          href: 'https://community.vuetifyjs.com'
-        },
-        {
-          text: 'Made with Vuetify',
-          href: 'https://madewithvuetifyjs.com'
-        },
-        {
-          text: 'Twitter',
-          href: 'https://twitter.com/vuetifyjs'
-        },
-        {
-          text: 'Articles',
-          href: 'https://medium.com/vuetify'
-        }
+      projects:[
+        {header:"oris project",text:"Lorem ipsum dolor sit amet consectetur adipisicing elit."},
+        {header:"oris project",text:"Lorem ipsum dolor sit amet consectetur adipisicing elit."},
+        {header:"oris project",text:"Lorem ipsum dolor sit amet consectetur adipisicing elit."}
       ],
-      whatsNext: [
+      about_me_text:"DEVELOPER FROM TEL AVIV-ISRAEL.\nBOTH FLUENT IN ENGLISH AND HEBREW, LOOKING FOR A JOB AS A FULL-STACK DEVELOPER.\n IM INPENDENT, AUTODIDACT, EAGER TO LEARN ENGENIEER WHO LOVES TO CODE MORE THAN ANYTHING.\nLOOKING FOR A PLACE TO GROW.\n (P.S IM UPDATED WITH ALL THE LATEST TECH THAT REGARDS WEB AND I LOVE TO SURF).",
+      courses:[
+        {header:"PROGRAMING",
+        list:[
+          "C",
+          "C++",
+          "C# (.NET)",
+          "ASSEMBLY",
+          "OPERATING-SYSTEMS",
+          "BASH",
+          "SQL"
+          ]
+          },
         {
-          text: 'Explore components',
-          href: 'https://vuetifyjs.com/components/api-explorer'
-        },
-        {
-          text: 'Select a layout',
-          href: 'https://vuetifyjs.com/layout/pre-defined'
-        },
-        {
-          text: 'Frequently Asked Questions',
-          href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions'
-        }
+          header:"MATH",
+            list:[
+              "LINEAR ALGEBRA",
+              "CALCULUS",
+              ]},
+              {
+          header:"COMPUTER-SCIENCE COURSES",
+            list:[
+              "DATA STRUCTURES",
+              "ALGORITHMS",
+              "COMPUTABILTY",
+              "COMPLEXITY"
+              ]},
+            
 
       ]
-    })
-  }
+    }
+  },
+components:{
+  'app-skills':skills,
+  'app-header':header
+}
+};
 </script>
-
-<style>
+<style scoped>
+.wrapper-container{
+    border-color: white;
+    border-width: 10px;
+    border-style: solid;
+    background-color: black;
+}
 
 </style>
+
