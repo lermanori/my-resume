@@ -14,26 +14,26 @@
             <v-container>
                 <v-layout row wrap justify-space-around>
                     <v-flex d-flex xs12 sm6 lg3>
-                        <v-btn round dark color="white" class="text-center black--text " text-color="black">
+                        <v-btn disabled round dark color="white" class="text-center black--text " text-color="black">
                             +972523221702
                             <v-icon large right dark>call</v-icon>
                         </v-btn>
                     </v-flex>
                     <v-flex d-flex xs12 sm6 lg3>
-                        <v-btn round dark color="white" class="text-center black--text " text-color="black">
+                        <v-btn disabled round dark color="white" class="text-center black--text " text-color="black">
                             lermanori
                             <v-icon large right dark>fab fa-github</v-icon>
                         </v-btn>
                     </v-flex>
                     <v-flex d-flex xs12 sm6 lg3>
-                        <v-btn round dark color="white" class="text-center black--text " text-color="black">
+                        <v-btn disabled round dark color="white" class="text-center black--text " text-color="black">
 
                             lermanori@gmail.com
                             <v-icon large right dark>email</v-icon>
                         </v-btn>
                     </v-flex>
                     <v-flex d-flex xs12 sm6 lg3>
-                        <v-btn round dark color="white" class="text-center black--text " text-color="black">
+                        <v-btn disabled round dark color="white" class="text-center black--text " text-color="black">
                             lermanori
                             <v-icon large right dark>fab fa-linkedin</v-icon>
                         </v-btn>
