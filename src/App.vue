@@ -6,11 +6,10 @@
         <span class="font-weight-light"> Lerman</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-
     </v-toolbar>
 
     <v-content>
-      <router-view/>
+      <router-view />
     </v-content>
   </v-app>
 </template>
@@ -31,8 +30,7 @@ export default {
 };
 </script>
 <style scoped>
-  .v-content{
-    background-color: black;
-  }
+.v-content {
+  background-color: black;
+}
 </style>
-
