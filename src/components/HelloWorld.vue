@@ -59,7 +59,7 @@ export default {
   data() {
     return {
       education_text:
-`The Academic College of Tel Aviv-Yafo 
+`The Academic College of Tel Aviv-Yafo, 
 10/2016 – present.
 Major: Computer Science B.Sc.`,
       //Programming Coursework: Algorithms, Data Structures, Design Patterns, Data-Bases, Object-oriented-programing. ",
